@@ -25,6 +25,7 @@ public class V2PlayerControls : MonoBehaviour
     [SerializeField] private float jumpPower;
     public Animator anim;
     public bool isSprinting;
+    
 
     private void Awake()
     {
@@ -71,6 +72,7 @@ public class V2PlayerControls : MonoBehaviour
     {
         if (IsGrounded() && _velocity < 0.0f)
         {
+            anim.SetBool("isInteracting", false);
             _velocity = -1.0f;
         }
         else
@@ -113,6 +115,7 @@ public class V2PlayerControls : MonoBehaviour
         {
             return;
         }
+        anim.SetBool("isInteracting", true);
         _velocity += jumpPower;
     }
 
