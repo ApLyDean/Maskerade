@@ -7,7 +7,9 @@ using UnityEngine.InputSystem;
 public class V2PlayerControls : MonoBehaviour
 {
     private PlayerControls playerControls;
-    #region Movement and Rotation Variables
+    private DialogueManager dialogueManager;
+    public Animator anim;
+    #region Movement Variables
     private Vector2 _input;
     private CharacterController _characterController;
     private Vector3 _direction;
@@ -16,16 +18,13 @@ public class V2PlayerControls : MonoBehaviour
     [SerializeField] private float speed;
     public float walkSpeed;
     public float sprintSpeed;
-    #endregion   
-    #region Gravity Variables
     private float _gravity = -9.81f;
     [SerializeField] private float gravityMultiplier = 3.0f;
     private float _velocity;
-    #endregion
     [SerializeField] private float jumpPower;
-    public Animator anim;
     public bool isSprinting;
-    
+    #endregion
+
 
     private void Awake()
     {
@@ -35,12 +34,14 @@ public class V2PlayerControls : MonoBehaviour
 
     private void Start()
     {
+        #region movement stuff
         walkSpeed = speed;
         sprintSpeed = speed * 1.75f;
         playerControls = new PlayerControls();
         OnEnable();
         playerControls.PlayerMovement.Sprint.performed += x => SprintPressed();
         playerControls.PlayerMovement.Sprint.canceled += x => SprintReleased();
+        #endregion
     }
 
     private void OnEnable()
@@ -54,6 +55,7 @@ public class V2PlayerControls : MonoBehaviour
 
     private void Update()
     {
+        #region movement stuff
         ApplyGravity();
         ApplyRotation();
         ApplyMovement();
@@ -66,8 +68,15 @@ public class V2PlayerControls : MonoBehaviour
             anim.SetFloat("vertical", 2);
         }
         anim.SetFloat("horizontal", Input.GetAxis("Horizontal"));
+        #endregion
     }
 
+    public void ActivateDialogue()
+    {
+        dialogueManager.StartDialogue();
+    }
+
+    #region Movement Functions
     private void ApplyGravity()
     {
         if (IsGrounded() && _velocity < 0.0f)
@@ -138,4 +147,8 @@ public class V2PlayerControls : MonoBehaviour
     }    
 
     private bool IsGrounded() => _characterController.isGrounded; 
+
+    #endregion
+
+
 }
