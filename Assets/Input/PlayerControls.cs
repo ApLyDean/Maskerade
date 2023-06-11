@@ -53,15 +53,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Activate Dialogue"",
-                    ""type"": ""Button"",
-                    ""id"": ""4c0c6227-349d-4e2e-b5ba-1f09532dae5a"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -196,17 +187,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Sprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8926a707-6b66-4ff5-a41a-c6dc399aa079"",
-                    ""path"": ""<Keyboard>/enter"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Activate Dialogue"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -218,7 +198,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_PlayerMovement_Movement = m_PlayerMovement.FindAction("Movement", throwIfNotFound: true);
         m_PlayerMovement_Jump = m_PlayerMovement.FindAction("Jump", throwIfNotFound: true);
         m_PlayerMovement_Sprint = m_PlayerMovement.FindAction("Sprint", throwIfNotFound: true);
-        m_PlayerMovement_ActivateDialogue = m_PlayerMovement.FindAction("Activate Dialogue", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -281,7 +260,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerMovement_Movement;
     private readonly InputAction m_PlayerMovement_Jump;
     private readonly InputAction m_PlayerMovement_Sprint;
-    private readonly InputAction m_PlayerMovement_ActivateDialogue;
     public struct PlayerMovementActions
     {
         private @PlayerControls m_Wrapper;
@@ -289,7 +267,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_PlayerMovement_Movement;
         public InputAction @Jump => m_Wrapper.m_PlayerMovement_Jump;
         public InputAction @Sprint => m_Wrapper.m_PlayerMovement_Sprint;
-        public InputAction @ActivateDialogue => m_Wrapper.m_PlayerMovement_ActivateDialogue;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMovement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -308,9 +285,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Sprint.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnSprint;
                 @Sprint.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnSprint;
                 @Sprint.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnSprint;
-                @ActivateDialogue.started -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnActivateDialogue;
-                @ActivateDialogue.performed -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnActivateDialogue;
-                @ActivateDialogue.canceled -= m_Wrapper.m_PlayerMovementActionsCallbackInterface.OnActivateDialogue;
             }
             m_Wrapper.m_PlayerMovementActionsCallbackInterface = instance;
             if (instance != null)
@@ -324,9 +298,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Sprint.started += instance.OnSprint;
                 @Sprint.performed += instance.OnSprint;
                 @Sprint.canceled += instance.OnSprint;
-                @ActivateDialogue.started += instance.OnActivateDialogue;
-                @ActivateDialogue.performed += instance.OnActivateDialogue;
-                @ActivateDialogue.canceled += instance.OnActivateDialogue;
             }
         }
     }
@@ -336,6 +307,5 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
-        void OnActivateDialogue(InputAction.CallbackContext context);
     }
 }

@@ -71,11 +71,6 @@ public class V2PlayerControls : MonoBehaviour
         #endregion
     }
 
-    public void ActivateDialogue()
-    {
-        dialogueManager.StartDialogue();
-    }
-
     #region Movement Functions
     private void ApplyGravity()
     {
@@ -149,6 +144,4 @@ public class V2PlayerControls : MonoBehaviour
     private bool IsGrounded() => _characterController.isGrounded; 
 
     #endregion
-
-
 }

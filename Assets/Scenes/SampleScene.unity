@@ -709,10 +709,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 83f9947f-bfe2-45b5-9a4d-a6a60ad31917
     m_ActionName: PlayerMovement/Sprint[/Keyboard/shift]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 4c0c6227-349d-4e2e-b5ba-1f09532dae5a
-    m_ActionName: PlayerMovement/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerMovement
@@ -7420,6 +7416,7 @@ GameObject:
   - component: {fileID: 1714241905}
   - component: {fileID: 1714241904}
   - component: {fileID: 1714241903}
+  - component: {fileID: 1714241907}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -7510,6 +7507,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1714241907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714241902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 432e9b5a66f9b454db8279c78a39cef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueBox: {fileID: 2022729254}
+  textComponent: {fileID: 1137179798}
+  lines:
+  - This is the first line.
+  - This is another line of dialogue.
+  - After this line, will the dialogue box close?
+  textSpeed: 0.1
 --- !u!1 &1718503017
 GameObject:
   m_ObjectHideFlags: 0
@@ -8665,7 +8681,6 @@ GameObject:
   - component: {fileID: 2022729255}
   - component: {fileID: 2022729258}
   - component: {fileID: 2022729257}
-  - component: {fileID: 2022729256}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -8694,24 +8709,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 30}
   m_SizeDelta: {x: 700, y: 150}
   m_Pivot: {x: 0.5, y: 0}
---- !u!114 &2022729256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2022729254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 432e9b5a66f9b454db8279c78a39cef9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textComponent: {fileID: 1137179798}
-  lines:
-  - This is the first line.
-  - This is another line of dialogue.
-  - After this line, will the dialogue box close?
-  textSpeed: 0.1
 --- !u!114 &2022729257
 MonoBehaviour:
   m_ObjectHideFlags: 0
