@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class V2PlayerControls : MonoBehaviour
 {
     private PlayerControls playerControls;
-    private DialogueManager dialogueManager;
+    DialogueManager dialogueManager;
     public Animator anim;
     #region Movement Variables
     private Vector2 _input;
@@ -42,6 +42,9 @@ public class V2PlayerControls : MonoBehaviour
         playerControls.PlayerMovement.Sprint.performed += x => SprintPressed();
         playerControls.PlayerMovement.Sprint.canceled += x => SprintReleased();
         #endregion
+        
+        dialogueManager = GameObject.Find("Canvas").GetComponent<DialogueManager>();
+        
     }
 
     private void OnEnable()
@@ -144,4 +147,9 @@ public class V2PlayerControls : MonoBehaviour
     private bool IsGrounded() => _characterController.isGrounded; 
 
     #endregion
+
+    /*void TalktoNPC()
+    {
+        dialogueManager.StartDialogue();
+    }*/
 }
