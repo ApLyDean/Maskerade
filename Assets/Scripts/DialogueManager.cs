@@ -5,11 +5,14 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+    V2PlayerControls v2PlayerControls;
     public GameObject dialogueBox;
     public TextMeshProUGUI textComponent;
     public string[] lines;
     public float textSpeed;
-    private int index;
+    public int index;
+    public bool dialogueOver;
+    
 
 
     // Start is called before the first frame update
@@ -17,6 +20,7 @@ public class DialogueManager : MonoBehaviour
     {
         textComponent.text = string.Empty;
         dialogueBox.SetActive(false);
+        dialogueOver = true;
         //StartDialogue();        
     }
 
@@ -31,11 +35,12 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
+                dialogueOver = true;
                 StopAllCoroutines();
                 textComponent.text = lines[index];
             }
-        }
-        
+        } 
+        //Debug.Log(dialogueOver.ToString());       
     }
 
     public void StartDialogue()
@@ -43,6 +48,7 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(true);
         index = 0;
         StartCoroutine(TypeLine());
+        dialogueOver = false;
     }
 
     IEnumerator TypeLine()
@@ -64,7 +70,13 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            dialogueBox.SetActive(false);
+            CloseDialogue();
         }
+    }
+    public void CloseDialogue()
+    {
+        Debug.Log("Dialogue Over");
+        dialogueOver = true;
+        dialogueBox.SetActive(false);
     }
 }

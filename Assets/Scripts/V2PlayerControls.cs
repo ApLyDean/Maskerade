@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class V2PlayerControls : MonoBehaviour
 {
     private PlayerControls playerControls;
+    public GameObject playerActions;
     DialogueManager dialogueManager;
     public Animator anim;
     #region Movement Variables
@@ -24,6 +25,7 @@ public class V2PlayerControls : MonoBehaviour
     [SerializeField] private float jumpPower;
     public bool isSprinting;
     #endregion
+    public bool actionsEnabled;
 
 
     private void Awake()
@@ -39,8 +41,8 @@ public class V2PlayerControls : MonoBehaviour
         sprintSpeed = speed * 1.75f;
         playerControls = new PlayerControls();
         OnEnable();
-        playerControls.PlayerMovement.Sprint.performed += x => SprintPressed();
-        playerControls.PlayerMovement.Sprint.canceled += x => SprintReleased();
+        playerControls.PlayerActions.Sprint.performed += x => SprintPressed();
+        playerControls.PlayerActions.Sprint.canceled += x => SprintReleased();
         #endregion
         
         dialogueManager = GameObject.Find("Canvas").GetComponent<DialogueManager>();
@@ -49,11 +51,16 @@ public class V2PlayerControls : MonoBehaviour
 
     private void OnEnable()
     {
+        //Debug.Log("Controls Enabled");
+        actionsEnabled = true;
         playerControls.Enable();
+        playerActions.SetActive(true);
     }
     private void OnDisable()
     {
+        actionsEnabled = false;
         playerControls.Disable();
+        playerActions.SetActive(false);
     }
 
     private void Update()
@@ -72,6 +79,8 @@ public class V2PlayerControls : MonoBehaviour
         }
         anim.SetFloat("horizontal", Input.GetAxis("Horizontal"));
         #endregion
+        
+ 
     }
 
     #region Movement Functions
@@ -132,8 +141,7 @@ public class V2PlayerControls : MonoBehaviour
         {
             Debug.Log("sprinting");
             speed = sprintSpeed;
-            isSprinting = true;
-            
+            isSprinting = true;            
         }
     }     
     
@@ -148,8 +156,11 @@ public class V2PlayerControls : MonoBehaviour
 
     #endregion
 
-    /*void TalktoNPC()
+    public void Talk(InputAction.CallbackContext context)
     {
-        dialogueManager.StartDialogue();
-    }*/
+        if (!context.started)
+        {
+            return;
+        }       
+    }
 }

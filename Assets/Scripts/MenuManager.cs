@@ -46,7 +46,6 @@ public class MenuManager : MonoBehaviour
     public void ReadGameSplash()
     {
         dialogueManager = GameObject.Find("Canvas").GetComponent<DialogueManager>();
-        
         dialogueManager.textComponent.text = string.Empty;
         dialogueManager.StartDialogue();
         clickAnywhere = GameObject.FindWithTag ("ClickAnywhere");
