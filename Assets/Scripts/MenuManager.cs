@@ -7,7 +7,7 @@ public class MenuManager : MonoBehaviour
 {
     DialogueManager dialogueManager;
     public GameObject menuButtons;
-    public GameObject clickAnywhere;
+    GameObject clickAnywhere;
     /*public GameObject backButton;
     public GameObject controlInfo;*/
 
@@ -16,7 +16,7 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         menuButtons.SetActive(true);
-        clickAnywhere.SetActive(true);
+        //clickAnywhere.SetActive(true);
         /*backButton.SetActive(false);
         controlInfo.SetActive(false); */       
     }
@@ -48,6 +48,7 @@ public class MenuManager : MonoBehaviour
         
         dialogueManager.textComponent.text = string.Empty;
         dialogueManager.StartDialogue();
+        clickAnywhere = GameObject.FindWithTag ("ClickAnywhere");
         clickAnywhere.SetActive(false);
     }
 
