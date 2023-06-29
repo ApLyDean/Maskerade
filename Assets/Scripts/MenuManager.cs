@@ -8,31 +8,32 @@ public class MenuManager : MonoBehaviour
     DialogueManager dialogueManager;
     public GameObject menuButtons;
     GameObject clickAnywhere;
-    /*public GameObject backButton;
-    public GameObject controlInfo;*/
+    //GameObject backButton;
+    GameObject controlInfo;
 
 
     // Start is called before the first frame update
     void Start()
     {
         menuButtons.SetActive(true);
-        //clickAnywhere.SetActive(true);
-        /*backButton.SetActive(false);
-        controlInfo.SetActive(false); */       
+        controlInfo = GameObject.FindWithTag ("ControlInfo");
+        //backButton = GameObject.FindWithTag ("BackButton");
+        controlInfo.SetActive(false); 
+        //backButton.SetActive(false);      
     }
 
     public void DisplayControls()
     {
-        /*menuButtons.SetActive(false);
+        menuButtons.SetActive(false);
         controlInfo.SetActive(true);
-        backButton.SetActive(true);*/
+        //backButton.SetActive(true);
     }
 
     public void Back()
     {
-        /*menuButtons.SetActive(true);
+        menuButtons.SetActive(true);
         controlInfo.SetActive(false);
-        backButton.SetActive(false);*/
+        //backButton.SetActive(false);
     }
 
     public void StartGameSplash()
