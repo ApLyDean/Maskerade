@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class DialogueManager : MonoBehaviour
+public class SplashDialogueManager : MonoBehaviour
 {
     V2PlayerControls v2PlayerControls;
     public GameObject dialogueBox;

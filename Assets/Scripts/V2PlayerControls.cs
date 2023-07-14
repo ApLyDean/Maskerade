@@ -8,7 +8,7 @@ public class V2PlayerControls : MonoBehaviour
 {
     private PlayerControls playerControls;
     public GameObject playerActions;
-    DialogueManager dialogueManager;
+    SplashDialogueManager dialogueManager;
     public Animator anim;
     #region Movement Variables
     private Vector2 _input;
@@ -45,7 +45,7 @@ public class V2PlayerControls : MonoBehaviour
         playerControls.PlayerActions.Sprint.canceled += x => SprintReleased();
         #endregion
         
-        dialogueManager = GameObject.Find("Canvas").GetComponent<DialogueManager>();
+        dialogueManager = GameObject.Find("Canvas").GetComponent<SplashDialogueManager>();
         
     }
 

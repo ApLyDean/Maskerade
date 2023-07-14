@@ -1134,6 +1134,7 @@ GameObject:
   - component: {fileID: 8899205069379002522}
   - component: {fileID: 4827671584164047159}
   - component: {fileID: 5116781086256200210}
+  - component: {fileID: 5219262664870387686}
   m_Layer: 0
   m_Name: Misa
   m_TagString: Untagged
@@ -1208,7 +1209,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a707d575386ef14697e8bccbd768272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerActions: {fileID: 0}
+  anim: {fileID: 0}
+  smoothTime: 0.05
   speed: 0
+  walkSpeed: 0
+  sprintSpeed: 0
+  gravityMultiplier: 3
+  jumpPower: 0
+  isSprinting: 0
+  actionsEnabled: 0
+--- !u!114 &5219262664870387686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2750485117699711066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da6c51194ab84042bc718fd8ead8aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  nextSentenceDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  endDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2951515879942725453
 GameObject:
   m_ObjectHideFlags: 0

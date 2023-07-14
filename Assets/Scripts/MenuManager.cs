@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    DialogueManager dialogueManager;
+    SplashDialogueManager dialogueManager;
     public GameObject menuButtons;
     GameObject clickAnywhere;
     //GameObject backButton;
@@ -45,7 +45,7 @@ public class MenuManager : MonoBehaviour
 
     public void ReadGameSplash()
     {
-        dialogueManager = GameObject.Find("Canvas").GetComponent<DialogueManager>();
+        dialogueManager = GameObject.Find("Canvas").GetComponent<SplashDialogueManager>();
         dialogueManager.textComponent.text = string.Empty;
         dialogueManager.StartDialogue();
         clickAnywhere = GameObject.FindWithTag ("ClickAnywhere");
