@@ -70,8 +70,7 @@ public class V2PlayerControls : MonoBehaviour
         ApplyRotation();
         ApplyMovement();
         if (!isSprinting)
-        {
-            
+        {    
             anim.SetFloat("vertical", Mathf.Abs(Input.GetAxis("Vertical")));
         }
         else
@@ -155,11 +154,5 @@ public class V2PlayerControls : MonoBehaviour
 
     #endregion
 
-    public void Talk(InputAction.CallbackContext context)
-    {
-        if (!context.started)
-        {
-            return;
-        }       
-    }
+
 }
