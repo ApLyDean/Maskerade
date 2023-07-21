@@ -26,6 +26,11 @@ public class V2PlayerControls : MonoBehaviour
     public bool isSprinting;
     #endregion
     public bool actionsEnabled;
+    #region Mask Variables
+    public GameObject allMasksUI;
+    public GameObject venetianMaskUI;
+    public GameObject ballroomMaskUI;
+    #endregion
 
 
     private void Awake()
@@ -46,7 +51,7 @@ public class V2PlayerControls : MonoBehaviour
         #endregion
         
         dialogueManager = GameObject.Find("Canvas").GetComponent<SplashDialogueManager>();
-        
+        allMasksUI.SetActive(false);
     }
 
     private void OnEnable()
@@ -154,5 +159,19 @@ public class V2PlayerControls : MonoBehaviour
 
     #endregion
 
+//MASKS
+    #region Mask Functionality
+    public void SwitchMasktoVenetian()
+    {
+        //change mask ui
+        
+        //grant current mask ability
+        //remove previous mask ability
+        //how can I remove a mask's ability 
+        //I think i need to do it manually when the mask is switched
+        //should I make a mask script
+
+    }
+    #endregion
 
 }

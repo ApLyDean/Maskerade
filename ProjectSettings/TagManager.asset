@@ -7,6 +7,11 @@ TagManager:
   - ClickAnywhere
   - ControlInfo
   - BackButton
+  - Rabble
+  - RiffRaff
+  - Scoundrel
+  - RHM2LotS
+  - LotS
   layers:
   - Default
   - TransparentFX
@@ -15,7 +20,7 @@ TagManager:
   - Water
   - UI
   - 
-  - 
+  - Enemy
   - Player
   - 
   - 
