@@ -1522,7 +1522,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298246098}
-  m_LocalRotation: {x: -3.252789e-10, y: 0.99713683, z: -0.075618215, w: -0.0000000042892787}
+  m_LocalRotation: {x: 3.2527897e-10, y: 0.99713683, z: -0.075618215, w: 0.0000000042892796}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2118,14 +2118,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'WASD and Arrow keys for movement
+  m_text: 'WASD: Movement
 
-    Shift to run
+    Arrow Keys: Camera Adjustment
 
-    Space to jump
+    Shift: Run
 
-    Right
-    mouse key to scroll through dialogue'
+    Space:
+    Jump
+
+    Enter: Speak with NPCs'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d881a65b608fc224c9e318a6241c2d7d, type: 2}
   m_sharedMaterial: {fileID: -6700383496581500011, guid: d881a65b608fc224c9e318a6241c2d7d, type: 2}
@@ -5537,7 +5539,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -6.5055794e-10, y: 0.9971369, z: -0.075618215, w: -0.000000008578558}
+  m_LocalRotation: {x: 6.5055794e-10, y: 0.9971369, z: -0.075618215, w: 0.000000008578559}
   m_LocalPosition: {x: 0, y: 2.258, z: -3.9699998}
   m_LocalScale: {x: 1, y: 0.99999994, z: 0.99999994}
   m_ConstrainProportionsScale: 0
@@ -8178,7 +8180,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404392156}
-  m_LocalRotation: {x: 0.000000001662621, y: 0.99559647, z: -0.0937431, w: 0.000000017657829}
+  m_LocalRotation: {x: -0.0000000016626214, y: 0.99559647, z: -0.09374312, w: -0.000000017657829}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
