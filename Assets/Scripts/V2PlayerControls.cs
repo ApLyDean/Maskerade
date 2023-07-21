@@ -71,16 +71,15 @@ public class V2PlayerControls : MonoBehaviour
         ApplyMovement();
         if (!isSprinting)
         {
-            anim.SetFloat("vertical", Input.GetAxis("Vertical"));
+            
+            anim.SetFloat("vertical", Mathf.Abs(Input.GetAxis("Vertical")));
         }
         else
         {
             anim.SetFloat("vertical", 2);
         }
         anim.SetFloat("horizontal", Input.GetAxis("Horizontal"));
-        #endregion
-        
- 
+        #endregion       
     }
 
     #region Movement Functions
