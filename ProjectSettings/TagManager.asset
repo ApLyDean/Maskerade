@@ -13,6 +13,7 @@ TagManager:
   - RHM2LotS
   - LotS
   - HiddenObject
+  - Enemy
   layers:
   - Default
   - TransparentFX

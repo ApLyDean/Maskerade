@@ -26,7 +26,9 @@ public class CombatManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //connect player health to player and enemy health to enemy
         playerCurrentHP = playerMaxHP = 12;
+        FindEnemyHP();
         enemyCurrentHP = enemyMaxHP;     
         enemyIndicators.SetActive(false);
         playerIndicator.SetActive(false);
@@ -35,12 +37,21 @@ public class CombatManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (playerCurrentHP <= 0)
+        if (playerCurrentHP <= 0)
         {
             //player dies
             PlayerDeath();
-        }*/
-        
+        }        
+    }
+
+    public void FindEnemyHP()
+    {                
+        GameObject[] gameObjectArray = GameObject.FindGameObjectsWithTag ("Rabble");
+        foreach (GameObject go in gameObjectArray) 
+        {     
+            enemyMaxHP = 2;         
+        }
+
     }
 
     public void EnemyPatrol()
@@ -72,7 +83,7 @@ public class CombatManager : MonoBehaviour
         }*/
     }
 
-    public void EnemyHealthChange()
+    public void EnemyHealthChange()//variable for change)
     {
         //I am unsure if the enemies will be allowed to heal at this point
         //but at the very least they sure can take damage
@@ -89,6 +100,7 @@ public class CombatManager : MonoBehaviour
 
     public void PlayerDeath()
     {
+        Debug.Log("Player Dead");
         //what happens when player dies?
         //game over screen appears with options to quit or restart
         //player's health should return to max

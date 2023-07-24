@@ -488,6 +488,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3701794791539581635}
+  - component: {fileID: 7460212871304645878}
+  - component: {fileID: 6904886712034158915}
   m_Layer: 0
   m_Name: mixamorig:RightHand
   m_TagString: Untagged
@@ -515,6 +517,32 @@ Transform:
   m_Father: {fileID: 682744617616025763}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7460212871304645878
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100399159011602442}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.30031216, y: 0.33556113, z: 0.2333872}
+  m_Center: {x: 0.009834924, y: 0.11848332, z: 0.011805689}
+--- !u!114 &6904886712034158915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100399159011602442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e24180fdea332409347f019e04fb5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  htm: {fileID: 6783853048177576537}
 --- !u!1 &1163921975741161378
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,7 +1111,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2535874223462960313}
-  m_LocalRotation: {x: 0.17389573, y: -0.00000052063905, z: -0.000000086712774, w: 0.9847641}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.135}
   m_LocalScale: {x: 0.003681165, y: 0.003681165, z: 0.003681165}
   m_ConstrainProportionsScale: 1
@@ -1391,6 +1419,8 @@ GameObject:
   - component: {fileID: 4827671584164047159}
   - component: {fileID: 5116781086256200210}
   - component: {fileID: 5219262664870387686}
+  - component: {fileID: 6783853048177576537}
+  - component: {fileID: 4031304079939661838}
   m_Layer: 0
   m_Name: Misa
   m_TagString: Untagged
@@ -1477,6 +1507,17 @@ MonoBehaviour:
   jumpPower: 0
   isSprinting: 0
   actionsEnabled: 0
+  venetianMaskUI: {fileID: 0}
+  ballroomMaskUI: {fileID: 0}
+  carnavalMaskUI: {fileID: 0}
+  mask4UI: {fileID: 0}
+  mask5UI: {fileID: 0}
+  mask6UI: {fileID: 0}
+  mask7UI: {fileID: 0}
+  mask8UI: {fileID: 0}
+  mask9UI: {fileID: 0}
+  mask10UI: {fileID: 0}
+  hiddenObjects: []
 --- !u!114 &5219262664870387686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1498,6 +1539,34 @@ MonoBehaviour:
   endDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6783853048177576537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2750485117699711066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7614ddcb470dc0c47a0c91da31a24935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 12
+  attack: 2
+--- !u!114 &4031304079939661838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2750485117699711066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c73de06dd81e4a944969b9ceefdf5d7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyhm: {fileID: 0}
+  htm: {fileID: 0}
 --- !u!1 &2951515879942725453
 GameObject:
   m_ObjectHideFlags: 0
