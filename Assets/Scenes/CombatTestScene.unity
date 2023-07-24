@@ -232,12 +232,12 @@ GameObject:
   - component: {fileID: 188934484}
   - component: {fileID: 188934483}
   m_Layer: 5
-  m_Name: Mask12
+  m_Name: Mask2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &188934482
 RectTransform:
   m_ObjectHideFlags: 0
@@ -251,7 +251,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1101357612}
-  m_RootOrder: 9
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -630,7 +630,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &590684516
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1017,12 +1017,12 @@ GameObject:
   - component: {fileID: 800789879}
   - component: {fileID: 800789878}
   m_Layer: 5
-  m_Name: Mask11
+  m_Name: Mask3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &800789877
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1036,7 +1036,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1101357612}
-  m_RootOrder: 8
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1098,7 +1098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &862738747
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1112,7 +1112,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1101357612}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1248,11 +1248,15 @@ MonoBehaviour:
     m_ActionId: 83f9947f-bfe2-45b5-9a4d-a6a60ad31917
     m_ActionName: PlayerMovement/Sprint[/Keyboard/shift]
   - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d2e0d4ee-57e9-4394-a443-e89eeebffd06
+    m_ActionName: PlayerActions/Talk[/Mouse/forwardButton,/Keyboard/enter]
+  - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 543450651631034691}
         m_TargetAssemblyTypeName: V2PlayerControls, Assembly-CSharp
-        m_MethodName: Talk
-        m_Mode: 0
+        m_MethodName: SwitchMasktoBallroom
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1261,8 +1265,40 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: d2e0d4ee-57e9-4394-a443-e89eeebffd06
-    m_ActionName: PlayerActions/Talk[/Mouse/forwardButton,/Keyboard/enter]
+    m_ActionId: 4f694692-daa7-470d-9372-c86bef128552
+    m_ActionName: PlayerActions/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 543450651631034691}
+        m_TargetAssemblyTypeName: V2PlayerControls, Assembly-CSharp
+        m_MethodName: SwitchMasktoVenetian
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a1ddf288-02bb-4734-8da7-4552cf0fa89a
+    m_ActionName: PlayerActions/SwitchtoVenetianMask[/Keyboard/l]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 543450651631034691}
+        m_TargetAssemblyTypeName: V2PlayerControls, Assembly-CSharp
+        m_MethodName: ResetMaskUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9d9a0d2d-89c2-4fcf-b812-d561911c6a7a
+    m_ActionName: PlayerActions/RemoveMask[/Keyboard/j]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerActions
@@ -1586,7 +1622,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1000908290
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1600,7 +1636,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1101357612}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1693,7 +1729,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1069963273
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1707,7 +1743,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1101357612}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1767,7 +1803,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1101357612
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1781,6 +1817,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1346027061}
+  - {fileID: 188934482}
+  - {fileID: 800789877}
   - {fileID: 1742179981}
   - {fileID: 1792843208}
   - {fileID: 1000908290}
@@ -1788,8 +1826,6 @@ RectTransform:
   - {fileID: 1069963273}
   - {fileID: 862738747}
   - {fileID: 1153886092}
-  - {fileID: 800789877}
-  - {fileID: 188934482}
   m_Father: {fileID: 322742057}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2071,7 +2107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1153886092
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2085,7 +2121,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1101357612}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2147,7 +2183,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1210186290
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2161,7 +2197,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1101357612}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2223,7 +2259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1346027061
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2632,7 +2668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1742179981
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2646,7 +2682,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1101357612}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2776,7 +2812,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1792843208
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2790,7 +2826,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1101357612}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3483,13 +3519,57 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5116781086256200210, guid: df3549031439a904389bd3290f532fdf, type: 3}
+      propertyPath: mask4UI
+      value: 
+      objectReference: {fileID: 1346027060}
+    - target: {fileID: 5116781086256200210, guid: df3549031439a904389bd3290f532fdf, type: 3}
+      propertyPath: mask5UI
+      value: 
+      objectReference: {fileID: 1742179980}
+    - target: {fileID: 5116781086256200210, guid: df3549031439a904389bd3290f532fdf, type: 3}
+      propertyPath: mask6UI
+      value: 
+      objectReference: {fileID: 1792843207}
+    - target: {fileID: 5116781086256200210, guid: df3549031439a904389bd3290f532fdf, type: 3}
+      propertyPath: mask7UI
+      value: 
+      objectReference: {fileID: 1000908289}
+    - target: {fileID: 5116781086256200210, guid: df3549031439a904389bd3290f532fdf, type: 3}
+      propertyPath: mask8UI
+      value: 
+      objectReference: {fileID: 1210186289}
+    - target: {fileID: 5116781086256200210, guid: df3549031439a904389bd3290f532fdf, type: 3}
+      propertyPath: mask9UI
+      value: 
+      objectReference: {fileID: 1069963272}
+    - target: {fileID: 5116781086256200210, guid: df3549031439a904389bd3290f532fdf, type: 3}
+      propertyPath: mask10UI
+      value: 
+      objectReference: {fileID: 862738746}
+    - target: {fileID: 5116781086256200210, guid: df3549031439a904389bd3290f532fdf, type: 3}
       propertyPath: jumpPower
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5116781086256200210, guid: df3549031439a904389bd3290f532fdf, type: 3}
+      propertyPath: allMasksUI
+      value: 
+      objectReference: {fileID: 1101357611}
+    - target: {fileID: 5116781086256200210, guid: df3549031439a904389bd3290f532fdf, type: 3}
       propertyPath: playerActions
       value: 
       objectReference: {fileID: 942255531}
+    - target: {fileID: 5116781086256200210, guid: df3549031439a904389bd3290f532fdf, type: 3}
+      propertyPath: ballroomMaskUI
+      value: 
+      objectReference: {fileID: 800789876}
+    - target: {fileID: 5116781086256200210, guid: df3549031439a904389bd3290f532fdf, type: 3}
+      propertyPath: carnavalMaskUI
+      value: 
+      objectReference: {fileID: 188934481}
+    - target: {fileID: 5116781086256200210, guid: df3549031439a904389bd3290f532fdf, type: 3}
+      propertyPath: venetianMaskUI
+      value: 
+      objectReference: {fileID: 1153886091}
     - target: {fileID: 5116781086256200210, guid: df3549031439a904389bd3290f532fdf, type: 3}
       propertyPath: gravityMultiplier
       value: 1

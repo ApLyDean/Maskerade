@@ -62,6 +62,33 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwitchtoBallroomMask"",
+                    ""type"": ""Button"",
+                    ""id"": ""4f694692-daa7-470d-9372-c86bef128552"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwitchtoVenetianMask"",
+                    ""type"": ""Button"",
+                    ""id"": ""a1ddf288-02bb-4734-8da7-4552cf0fa89a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RemoveMask"",
+                    ""type"": ""Button"",
+                    ""id"": ""9d9a0d2d-89c2-4fcf-b812-d561911c6a7a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -163,6 +190,39 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Talk"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""544f1095-d019-423c-8f6a-74e2b789bdf5"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchtoBallroomMask"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""654bd840-e9b2-4dd0-8cc1-e89ce9da5f18"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchtoVenetianMask"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3cb05260-11e8-42fb-8a16-ec01a1c8960e"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RemoveMask"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -175,6 +235,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_PlayerActions_Jump = m_PlayerActions.FindAction("Jump", throwIfNotFound: true);
         m_PlayerActions_Sprint = m_PlayerActions.FindAction("Sprint", throwIfNotFound: true);
         m_PlayerActions_Talk = m_PlayerActions.FindAction("Talk", throwIfNotFound: true);
+        m_PlayerActions_SwitchtoBallroomMask = m_PlayerActions.FindAction("SwitchtoBallroomMask", throwIfNotFound: true);
+        m_PlayerActions_SwitchtoVenetianMask = m_PlayerActions.FindAction("SwitchtoVenetianMask", throwIfNotFound: true);
+        m_PlayerActions_RemoveMask = m_PlayerActions.FindAction("RemoveMask", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -238,6 +301,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_Jump;
     private readonly InputAction m_PlayerActions_Sprint;
     private readonly InputAction m_PlayerActions_Talk;
+    private readonly InputAction m_PlayerActions_SwitchtoBallroomMask;
+    private readonly InputAction m_PlayerActions_SwitchtoVenetianMask;
+    private readonly InputAction m_PlayerActions_RemoveMask;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
@@ -246,6 +312,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_PlayerActions_Jump;
         public InputAction @Sprint => m_Wrapper.m_PlayerActions_Sprint;
         public InputAction @Talk => m_Wrapper.m_PlayerActions_Talk;
+        public InputAction @SwitchtoBallroomMask => m_Wrapper.m_PlayerActions_SwitchtoBallroomMask;
+        public InputAction @SwitchtoVenetianMask => m_Wrapper.m_PlayerActions_SwitchtoVenetianMask;
+        public InputAction @RemoveMask => m_Wrapper.m_PlayerActions_RemoveMask;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -267,6 +336,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Talk.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnTalk;
                 @Talk.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnTalk;
                 @Talk.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnTalk;
+                @SwitchtoBallroomMask.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSwitchtoBallroomMask;
+                @SwitchtoBallroomMask.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSwitchtoBallroomMask;
+                @SwitchtoBallroomMask.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSwitchtoBallroomMask;
+                @SwitchtoVenetianMask.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSwitchtoVenetianMask;
+                @SwitchtoVenetianMask.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSwitchtoVenetianMask;
+                @SwitchtoVenetianMask.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnSwitchtoVenetianMask;
+                @RemoveMask.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnRemoveMask;
+                @RemoveMask.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnRemoveMask;
+                @RemoveMask.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnRemoveMask;
             }
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -283,6 +361,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Talk.started += instance.OnTalk;
                 @Talk.performed += instance.OnTalk;
                 @Talk.canceled += instance.OnTalk;
+                @SwitchtoBallroomMask.started += instance.OnSwitchtoBallroomMask;
+                @SwitchtoBallroomMask.performed += instance.OnSwitchtoBallroomMask;
+                @SwitchtoBallroomMask.canceled += instance.OnSwitchtoBallroomMask;
+                @SwitchtoVenetianMask.started += instance.OnSwitchtoVenetianMask;
+                @SwitchtoVenetianMask.performed += instance.OnSwitchtoVenetianMask;
+                @SwitchtoVenetianMask.canceled += instance.OnSwitchtoVenetianMask;
+                @RemoveMask.started += instance.OnRemoveMask;
+                @RemoveMask.performed += instance.OnRemoveMask;
+                @RemoveMask.canceled += instance.OnRemoveMask;
             }
         }
     }
@@ -293,5 +380,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
         void OnTalk(InputAction.CallbackContext context);
+        void OnSwitchtoBallroomMask(InputAction.CallbackContext context);
+        void OnSwitchtoVenetianMask(InputAction.CallbackContext context);
+        void OnRemoveMask(InputAction.CallbackContext context);
     }
 }

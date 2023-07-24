@@ -27,9 +27,18 @@ public class V2PlayerControls : MonoBehaviour
     #endregion
     public bool actionsEnabled;
     #region Mask Variables
-    public GameObject allMasksUI;
+    
     public GameObject venetianMaskUI;
     public GameObject ballroomMaskUI;
+    public GameObject carnavalMaskUI;
+    
+    public GameObject mask4UI;
+    public GameObject mask5UI;
+    public GameObject mask6UI;
+    public GameObject mask7UI;
+    public GameObject mask8UI;
+    public GameObject mask9UI;
+    public GameObject mask10UI;
     #endregion
 
 
@@ -51,7 +60,8 @@ public class V2PlayerControls : MonoBehaviour
         #endregion
         
         dialogueManager = GameObject.Find("Canvas").GetComponent<SplashDialogueManager>();
-        allMasksUI.SetActive(false);
+
+        venetianMaskUI.SetActive(true);
     }
 
     private void OnEnable()
@@ -83,7 +93,20 @@ public class V2PlayerControls : MonoBehaviour
             anim.SetFloat("vertical", 2);
         }
         anim.SetFloat("horizontal", Input.GetAxis("Horizontal"));
-        #endregion       
+        #endregion    
+
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            SwitchMasktoVenetian();
+        }   
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            SwitchMasktoBallroom();
+        }   
+        if(Input.GetKeyDown(KeyCode.J))
+        {
+            ResetMaskUI();
+        }
     }
 
     #region Movement Functions
@@ -163,6 +186,9 @@ public class V2PlayerControls : MonoBehaviour
     #region Mask Functionality
     public void SwitchMasktoVenetian()
     {
+        Debug.Log("Venetian Mask Equipped");
+        ResetMaskUI();
+        venetianMaskUI.SetActive(true);
         //change mask ui
         
         //grant current mask ability
@@ -170,8 +196,28 @@ public class V2PlayerControls : MonoBehaviour
         //how can I remove a mask's ability 
         //I think i need to do it manually when the mask is switched
         //should I make a mask script
-
     }
+    public void SwitchMasktoBallroom()
+    {
+        Debug.Log("Ballroom Mask Equipped");
+        ResetMaskUI();
+        ballroomMaskUI.SetActive(true);
+    }
+    public void ResetMaskUI()
+    {
+        Debug.Log("Removing Mask");    
+        venetianMaskUI.SetActive(false);
+        ballroomMaskUI.SetActive(false);
+        carnavalMaskUI.SetActive(false);        
+        mask4UI.SetActive(false);
+        mask5UI.SetActive(false);
+        mask6UI.SetActive(false);
+        mask7UI.SetActive(false);
+        mask8UI.SetActive(false);
+        mask9UI.SetActive(false);
+        mask10UI.SetActive(false);
+    }
+    
     #endregion
 
 }
