@@ -12,6 +12,7 @@ TagManager:
   - Scoundrel
   - RHM2LotS
   - LotS
+  - HiddenObject
   layers:
   - Default
   - TransparentFX

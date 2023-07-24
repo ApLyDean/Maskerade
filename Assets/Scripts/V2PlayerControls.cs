@@ -40,7 +40,7 @@ public class V2PlayerControls : MonoBehaviour
     public GameObject mask9UI;
     public GameObject mask10UI;
     #endregion
-
+    public GameObject[] hiddenObjects;
 
     private void Awake()
     {
@@ -61,7 +61,8 @@ public class V2PlayerControls : MonoBehaviour
         
         dialogueManager = GameObject.Find("Canvas").GetComponent<SplashDialogueManager>();
 
-        venetianMaskUI.SetActive(true);
+        hiddenObjects = GameObject.FindGameObjectsWithTag("HiddenObject");
+        ResetMaskUI();
     }
 
     private void OnEnable()
@@ -189,25 +190,31 @@ public class V2PlayerControls : MonoBehaviour
         Debug.Log("Venetian Mask Equipped");
         ResetMaskUI();
         venetianMaskUI.SetActive(true);
-        //change mask ui
-        
+        //change mask ui (complete)        
         //grant current mask ability
-        //remove previous mask ability
-        //how can I remove a mask's ability 
-        //I think i need to do it manually when the mask is switched
-        //should I make a mask script
+        //remove previous mask ability manually when switched in resetmaskui()
     }
     public void SwitchMasktoBallroom()
     {
         Debug.Log("Ballroom Mask Equipped");
         ResetMaskUI();
         ballroomMaskUI.SetActive(true);
+
+        //functionality
+        foreach (GameObject ho in hiddenObjects)
+        {
+            ho.SetActive(true);
+        }
     }
     public void ResetMaskUI()
     {
         Debug.Log("Removing Mask");    
         venetianMaskUI.SetActive(false);
         ballroomMaskUI.SetActive(false);
+        foreach (GameObject ho in hiddenObjects)
+        {
+            ho.SetActive(false);
+        }
         carnavalMaskUI.SetActive(false);        
         mask4UI.SetActive(false);
         mask5UI.SetActive(false);
