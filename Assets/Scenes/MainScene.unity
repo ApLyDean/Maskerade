@@ -12502,7 +12502,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2142698168}
-  m_LocalRotation: {x: 0.057274014, y: 0.09153078, z: -0.005273238, w: 0.99413985}
+  m_LocalRotation: {x: 0.057274014, y: 0.091530815, z: -0.005273239, w: 0.99413985}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12805,6 +12805,14 @@ PrefabInstance:
       objectReference: {fileID: 862738746}
     - target: {fileID: 5116781086256200210, guid: df3549031439a904389bd3290f532fdf, type: 3}
       propertyPath: jumpPower
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116781086256200210, guid: df3549031439a904389bd3290f532fdf, type: 3}
+      propertyPath: boostedATK
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116781086256200210, guid: df3549031439a904389bd3290f532fdf, type: 3}
+      propertyPath: standardATK
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5116781086256200210, guid: df3549031439a904389bd3290f532fdf, type: 3}
