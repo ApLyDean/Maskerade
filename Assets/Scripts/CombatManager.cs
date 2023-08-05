@@ -28,8 +28,7 @@ public class CombatManager : MonoBehaviour
     {
         //connect player health to player and enemy health to enemy
         playerCurrentHP = playerMaxHP = 12;
-        FindEnemyHP();
-        enemyCurrentHP = enemyMaxHP;     
+        enemyCurrentHP = enemyMaxHP = 2;     
         enemyIndicators.SetActive(false);
         playerIndicator.SetActive(false);
     }
@@ -42,16 +41,6 @@ public class CombatManager : MonoBehaviour
             //player dies
             PlayerDeath();
         }        
-    }
-
-    public void FindEnemyHP()
-    {                
-        GameObject[] gameObjectArray = GameObject.FindGameObjectsWithTag ("Rabble");
-        foreach (GameObject go in gameObjectArray) 
-        {     
-            enemyMaxHP = 2;         
-        }
-
     }
 
     public void EnemyPatrol()

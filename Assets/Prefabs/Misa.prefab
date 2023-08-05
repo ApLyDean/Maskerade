@@ -1395,6 +1395,7 @@ GameObject:
   - component: {fileID: 6783853048177576537}
   - component: {fileID: 4031304079939661838}
   - component: {fileID: 1944903996483474420}
+  - component: {fileID: 985612489428033898}
   m_Layer: 0
   m_Name: Misa
   m_TagString: Untagged
@@ -1553,6 +1554,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c007e2ec22cf9c643baab6f4955c0eee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &985612489428033898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2750485117699711066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e24180fdea332409347f019e04fb5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 6337057728635925195}
 --- !u!1 &2951515879942725453
 GameObject:
   m_ObjectHideFlags: 0
@@ -2492,7 +2506,6 @@ GameObject:
   m_Component:
   - component: {fileID: 991235830420175274}
   - component: {fileID: 3602367834172651563}
-  - component: {fileID: 286620282035205724}
   - component: {fileID: 547221704222490337}
   m_Layer: 0
   m_Name: Fist
@@ -2529,19 +2542,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.30031216, y: 0.33556113, z: 0.2333872}
   m_Center: {x: 0.009834924, y: 0.11848332, z: 0.011805689}
---- !u!114 &286620282035205724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6337057728635925195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02e24180fdea332409347f019e04fb5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  htm: {fileID: 6783853048177576537}
 --- !u!114 &547221704222490337
 MonoBehaviour:
   m_ObjectHideFlags: 0

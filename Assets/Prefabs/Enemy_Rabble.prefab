@@ -1176,7 +1176,7 @@ GameObject:
   - component: {fileID: 6200938236607152193}
   m_Layer: 7
   m_Name: Enemy_Rabble
-  m_TagString: Rabble
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1291,7 +1291,7 @@ GameObject:
   - component: {fileID: 964882893519859182}
   - component: {fileID: 1207551353009435562}
   m_Layer: 5
-  m_Name: Canvas (1)
+  m_Name: NamePop-up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
