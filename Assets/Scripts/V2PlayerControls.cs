@@ -66,8 +66,8 @@ public class V2PlayerControls : MonoBehaviour
         dialogueManager = GameObject.Find("Canvas").GetComponent<SplashDialogueManager>();
 
         hiddenObjects = GameObject.FindGameObjectsWithTag("HiddenObject");
-        standardATK = 8;
-        boostedATK = 16;        
+        //standardATK = 8;
+        //boostedATK = 16;        
         ResetMaskUI();
     }
 
