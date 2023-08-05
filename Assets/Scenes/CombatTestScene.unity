@@ -2232,6 +2232,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1153886091}
   m_CullTransparentMesh: 1
+--- !u!1 &1200645146 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6337057728635925195, guid: df3549031439a904389bd3290f532fdf, type: 3}
+  m_PrefabInstance: {fileID: 3092502303339518881}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1210186289
 GameObject:
   m_ObjectHideFlags: 0
@@ -3523,7 +3528,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a707d575386ef14697e8bccbd768272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &543450651631034697
+--- !u!114 &543450651631034698 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6783853048177576537, guid: df3549031439a904389bd3290f532fdf, type: 3}
+  m_PrefabInstance: {fileID: 3092502303339518881}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849196338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7614ddcb470dc0c47a0c91da31a24935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &543450651631034699
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3532,9 +3548,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1849196338}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c007e2ec22cf9c643baab6f4955c0eee, type: 3}
+  m_Script: {fileID: 11500000, guid: b24946b2391db3d40977d3c1b6271c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  htm: {fileID: 543450651631034698}
+  debugPopup: {fileID: 0}
+  weapon: {fileID: 1200645146}
 --- !u!1001 &2077590608299026655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3656,6 +3675,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1034800922}
     - target: {fileID: 547221704222490337, guid: df3549031439a904389bd3290f532fdf, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 1200645146}
+    - target: {fileID: 547221704222490337, guid: df3549031439a904389bd3290f532fdf, type: 3}
       propertyPath: debugPopup
       value: 
       objectReference: {fileID: 1817199652}
@@ -3670,6 +3693,10 @@ PrefabInstance:
     - target: {fileID: 2750485117699711066, guid: df3549031439a904389bd3290f532fdf, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750485117699711066, guid: df3549031439a904389bd3290f532fdf, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3269753005209893600, guid: df3549031439a904389bd3290f532fdf, type: 3}
       propertyPath: m_RootOrder
