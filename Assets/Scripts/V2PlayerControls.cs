@@ -9,6 +9,7 @@ public class V2PlayerControls : MonoBehaviour
     private PlayerControls playerControls;
     public GameObject playerActions;
     SplashDialogueManager dialogueManager;
+    public HealthManager htm;
     public Animator anim;
     #region Movement Variables
     private Vector2 _input;
@@ -40,8 +41,11 @@ public class V2PlayerControls : MonoBehaviour
     public GameObject mask9UI;
     public GameObject mask10UI;
     #endregion
-    public GameObject[] hiddenObjects;
-
+    #region Mask Functionality Variables
+    public GameObject[] hiddenObjects; //ballroom
+    public float boostedATK; //venetian
+    public float standardATK; //venetian
+    #endregion
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
@@ -62,6 +66,8 @@ public class V2PlayerControls : MonoBehaviour
         dialogueManager = GameObject.Find("Canvas").GetComponent<SplashDialogueManager>();
 
         hiddenObjects = GameObject.FindGameObjectsWithTag("HiddenObject");
+        standardATK = 8;
+        boostedATK = 16;        
         ResetMaskUI();
     }
 
@@ -190,9 +196,10 @@ public class V2PlayerControls : MonoBehaviour
         Debug.Log("Venetian Mask Equipped");
         ResetMaskUI();
         venetianMaskUI.SetActive(true);
-        //change mask ui (complete)        
-        //grant current mask ability
-        //remove previous mask ability manually when switched in resetmaskui()
+        
+        //functionality
+        htm.attack = boostedATK;  
+
     }
     public void SwitchMasktoBallroom()
     {
@@ -208,8 +215,10 @@ public class V2PlayerControls : MonoBehaviour
     }
     public void ResetMaskUI()
     {
-        Debug.Log("Removing Mask");    
+        Debug.Log("Removing Mask"); 
+        
         venetianMaskUI.SetActive(false);
+        htm.attack = standardATK;
         ballroomMaskUI.SetActive(false);
         foreach (GameObject ho in hiddenObjects)
         {

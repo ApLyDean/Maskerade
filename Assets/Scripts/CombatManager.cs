@@ -10,13 +10,6 @@ public class CombatManager : MonoBehaviour
     //maybe have enemy indicator once enemy starts chasing player
     //have enemy despawn ("die") when health hits 0
     //have player die when health hits 0
-    
-    #region Character HP Variables
-    int playerCurrentHP;
-    int playerMaxHP;
-    public int enemyCurrentHP;
-    public int enemyMaxHP;
-    #endregion 
 
     public GameObject enemyIndicators;
     public GameObject playerIndicator;
@@ -25,10 +18,7 @@ public class CombatManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        //connect player health to player and enemy health to enemy
-        playerCurrentHP = playerMaxHP = 12;
-        enemyCurrentHP = enemyMaxHP = 2;     
+    {  
         enemyIndicators.SetActive(false);
         playerIndicator.SetActive(false);
     }
@@ -36,11 +26,12 @@ public class CombatManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerCurrentHP <= 0)
+        //call player's current hp from healthmanager
+        /*if (playerCurrentHP <= 0)
         {
             //player dies
             PlayerDeath();
-        }        
+        }*/        
     }
 
     public void EnemyPatrol()

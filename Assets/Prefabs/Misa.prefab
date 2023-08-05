@@ -1257,7 +1257,7 @@ GameObject:
   - component: {fileID: 8440039951904476842}
   - component: {fileID: 4253997033313120648}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: PlayerIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1398,7 +1398,7 @@ GameObject:
   - component: {fileID: 985612489428033898}
   m_Layer: 0
   m_Name: Misa
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1540,8 +1540,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c73de06dd81e4a944969b9ceefdf5d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyhm: {fileID: 0}
-  htm: {fileID: 0}
 --- !u!114 &1944903996483474420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1551,9 +1549,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2750485117699711066}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c007e2ec22cf9c643baab6f4955c0eee, type: 3}
+  m_Script: {fileID: 11500000, guid: ee3bebf0e65d76a44b80507d1d3c229a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyCurrentHP: 0
+  enemyMaxHP: 0
+  enemyIndicators: {fileID: 0}
+  playerIndicator: {fileID: 2691195483746837001}
 --- !u!114 &985612489428033898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2555,7 +2557,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   htm: {fileID: 6783853048177576537}
-  debugPopup: {fileID: 0}
 --- !u!1 &6408584660477049789
 GameObject:
   m_ObjectHideFlags: 0
