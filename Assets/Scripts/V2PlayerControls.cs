@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+//using System.Numerics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -24,7 +25,8 @@ public class V2PlayerControls : MonoBehaviour
     [SerializeField] private float gravityMultiplier = 3.0f;
     private float _velocity;
     [SerializeField] private float jumpPower;
-    public bool isSprinting;
+    public bool isSprinting;    
+
     #endregion
     public bool actionsEnabled;
     #region Mask Variables
@@ -71,6 +73,7 @@ public class V2PlayerControls : MonoBehaviour
         ResetMaskUI();
     }
 
+    #region OnEnable and OnDisable
     private void OnEnable()
     {
         //Debug.Log("Controls Enabled");
@@ -84,6 +87,7 @@ public class V2PlayerControls : MonoBehaviour
         playerControls.Disable();
         playerActions.SetActive(false);
     }
+    #endregion
 
     private void Update()
     {
@@ -91,6 +95,7 @@ public class V2PlayerControls : MonoBehaviour
         ApplyGravity();
         ApplyRotation();
         ApplyMovement();
+        //MovePlayerRelative2Cam();
         if (!isSprinting)
         {    
             anim.SetFloat("vertical", Mathf.Abs(Input.GetAxis("Vertical")));
@@ -100,6 +105,7 @@ public class V2PlayerControls : MonoBehaviour
             anim.SetFloat("vertical", 2);
         }
         anim.SetFloat("horizontal", Input.GetAxis("Horizontal"));
+
         #endregion    
 
         if(Input.GetKeyDown(KeyCode.L))
@@ -146,13 +152,38 @@ public class V2PlayerControls : MonoBehaviour
     private void ApplyMovement()
     {
         _characterController.Move(_direction * speed * Time.deltaTime);
+
     }
 
     public void Move(InputAction.CallbackContext context)
     {
         _input = context.ReadValue<Vector2>();
-        _direction = new Vector3(_input.x, 0.0f, _input.y);
+        
+        Vector3 forward = Camera.main.transform.forward;
+        Vector3 right = Camera.main.transform.right;
+
+        forward.y = 0;
+        right.y = 0;
+
+        forward = forward.normalized;
+        right = right.normalized;
+
+        Vector3 forwardRelativeVerticalInput = _input.y * forward;
+        Vector3 rightRelativeHorizontalInput = _input.x * right;
+
+        Vector3 cameraRelativeMvmt = forwardRelativeVerticalInput + rightRelativeHorizontalInput;
+
+        //_direction = new Vector3(_input.x , 0.0f, _input.y);
+        _direction = new Vector3(cameraRelativeMvmt.x , 0.0f, cameraRelativeMvmt.z);
     }
+
+    private void MovePlayerRelative2Cam()
+    {
+
+        //_characterController.Move(cameraRelativeMvmt * speed * Time.deltaTime);
+        //this.transform.Translate(cameraRelativeMvmt, Space.World);
+    }
+
     
     public void Jump(InputAction.CallbackContext context)
     {
