@@ -95,7 +95,6 @@ public class V2PlayerControls : MonoBehaviour
         ApplyGravity();
         ApplyRotation();
         ApplyMovement();
-        //MovePlayerRelative2Cam();
         if (!isSprinting)
         {    
             anim.SetFloat("vertical", Mathf.Abs(Input.GetAxis("Vertical")));
@@ -158,7 +157,7 @@ public class V2PlayerControls : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         _input = context.ReadValue<Vector2>();
-        
+
         Vector3 forward = Camera.main.transform.forward;
         Vector3 right = Camera.main.transform.right;
 
@@ -173,17 +172,8 @@ public class V2PlayerControls : MonoBehaviour
 
         Vector3 cameraRelativeMvmt = forwardRelativeVerticalInput + rightRelativeHorizontalInput;
 
-        //_direction = new Vector3(_input.x , 0.0f, _input.y);
         _direction = new Vector3(cameraRelativeMvmt.x , 0.0f, cameraRelativeMvmt.z);
     }
-
-    private void MovePlayerRelative2Cam()
-    {
-
-        //_characterController.Move(cameraRelativeMvmt * speed * Time.deltaTime);
-        //this.transform.Translate(cameraRelativeMvmt, Space.World);
-    }
-
     
     public void Jump(InputAction.CallbackContext context)
     {
