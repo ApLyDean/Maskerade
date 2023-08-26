@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 public class AIManager : MonoBehaviour
 {
+    #region DanCS Tutorial Variables
     public NavMeshAgent navMeshAgent;
     public float startWaitTime = 4;
     public float timeToRotate = 2;
@@ -32,10 +33,14 @@ public class AIManager : MonoBehaviour
     bool m_PlayerNear;
     bool m_IsPatrol;
     bool m_CaughtPlayer;
+    #endregion
 
+    public Animator animator;
+    
     // Start is called before the first frame update
     void Start()
     {
+        #region DanCS
         m_playerPosition = Vector3.zero;
         m_IsPatrol = true;
         m_CaughtPlayer = false;
@@ -48,7 +53,10 @@ public class AIManager : MonoBehaviour
 
         navMeshAgent.isStopped = false;
         navMeshAgent.speed = speedWalk;
-        navMeshAgent.SetDestination(waypoints[m_CurrentWayPointIndex].position);        
+        navMeshAgent.SetDestination(waypoints[m_CurrentWayPointIndex].position);    
+        #endregion
+
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -142,11 +150,24 @@ public class AIManager : MonoBehaviour
     void Move(float speed)
     {
         navMeshAgent.isStopped = false;
-        navMeshAgent.speed = speed;        
+        navMeshAgent.speed = speed; 
+        
+        if (speed == speedRun)
+        {
+            //chasing anim here
+            //animator.SetTrigger("chasingT");
+        }
+        else if (speed == speedWalk)
+        {
+            //walking anim here
+            //animator.SetTrigger("movingT");
+        }       
     }
 
     void Stop()
     {
+        //trying to get idle anim here
+        //animator.SetTrigger("idleT"); 
         navMeshAgent.isStopped = true;
         navMeshAgent.speed = 0;
     }
