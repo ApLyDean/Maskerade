@@ -63,6 +63,7 @@ public class AIManager : MonoBehaviour
     void Update()
     {
         EnvironmentView();
+        animator.SetFloat("speed", navMeshAgent.speed);
         if (!m_IsPatrol)
         {
             Chasing();
