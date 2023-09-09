@@ -3,6 +3,7 @@ using System.Collections.Generic;
 //using System.Numerics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CharacterController))]
 public class V2PlayerControls : MonoBehaviour
@@ -119,6 +120,13 @@ public class V2PlayerControls : MonoBehaviour
         {
             ResetMaskUI();
         }
+
+        #region Debug Controls
+        if(Input.GetKeyDown(KeyCode.F6))
+        {            
+            SceneManager.LoadScene("MainMenu");
+        }
+        #endregion
     }
 
     #region Movement Functions

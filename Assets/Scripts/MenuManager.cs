@@ -63,4 +63,18 @@ public class MenuManager : MonoBehaviour
         Debug.Log("Quit Game");
     }
 
+    #region Debug Scene Buttons
+    
+    public void GoToAICombat()
+    {
+        SceneManager.LoadScene("AICombatScene");
+    }
+
+    public void GoToCombatTest()
+    {
+        SceneManager.LoadScene("CombatTestScene");
+    }
+
+    #endregion
+
 }
