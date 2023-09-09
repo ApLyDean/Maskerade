@@ -35,7 +35,7 @@ public class AIManager : MonoBehaviour
     bool m_CaughtPlayer;
     #endregion
 
-    public Animator animator;
+    //public Animator animator;
     
     // Start is called before the first frame update
     void Start()
@@ -56,14 +56,14 @@ public class AIManager : MonoBehaviour
         navMeshAgent.SetDestination(waypoints[m_CurrentWayPointIndex].position);    
         #endregion
 
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         EnvironmentView();
-        animator.SetFloat("speed", navMeshAgent.speed);
+        //animator.SetFloat("speed", navMeshAgent.speed);
         if (!m_IsPatrol)
         {
             Chasing();
