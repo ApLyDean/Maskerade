@@ -2562,6 +2562,10 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[2]
       value: 
       objectReference: {fileID: 934993625}
+    - target: {fileID: 8354208027611366091, guid: 454cb1e3f6d38d74595cf2988b2127ca, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8598502495498701116, guid: 454cb1e3f6d38d74595cf2988b2127ca, type: 3}
       propertyPath: m_IsActive
       value: 1
