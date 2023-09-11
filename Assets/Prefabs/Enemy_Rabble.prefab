@@ -1334,6 +1334,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  animator: {fileID: 0}
+  htm: {fileID: 0}
 --- !u!1 &3445517456531298451
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -65,7 +66,7 @@ public class AIManager : MonoBehaviour
     {
         EnvironmentView();
         animator.SetFloat("speed", navMeshAgent.speed);
-        Debug.Log(navMeshAgent.speed);
+        //Debug.Log(navMeshAgent.speed);
         
         if (!m_IsPatrol)
         {
@@ -75,7 +76,7 @@ public class AIManager : MonoBehaviour
         {
             Patroling();
         }    
- 
+
     }
 
     private void Chasing()
@@ -228,8 +229,4 @@ public class AIManager : MonoBehaviour
         }        
     }
 
-    void Death()
-    {
-        Stop();
-    }
 }
