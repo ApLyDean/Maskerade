@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CombatTestScene.unity
     guid: 92040e1a7be29ab4486d57eb96cd69d5
+  - enabled: 1
+    path: Assets/Scenes/EnemyHideout.unity
+    guid: 59c5199b215d5e24ab2109c894916119
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 2a0a24d32795ac84a9a7b319eae969ee, type: 2}

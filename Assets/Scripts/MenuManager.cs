@@ -75,6 +75,11 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("CombatTestScene");
     }
 
+    public void GoToHideout()
+    {        
+        SceneManager.LoadScene("EnemyHideout");
+    }
+
     #endregion
 
 }
