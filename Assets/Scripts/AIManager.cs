@@ -36,6 +36,7 @@ public class AIManager : MonoBehaviour
     #endregion
 
     public Animator animator;
+    public HealthManager htm;
     
     // Start is called before the first frame update
     void Start()
@@ -73,7 +74,8 @@ public class AIManager : MonoBehaviour
         else
         {
             Patroling();
-        }        
+        }    
+ 
     }
 
     private void Chasing()
@@ -224,5 +226,10 @@ public class AIManager : MonoBehaviour
                 m_playerPosition = player.transform.position;
             }
         }        
+    }
+
+    void Death()
+    {
+        Stop();
     }
 }

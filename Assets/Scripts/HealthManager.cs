@@ -10,6 +10,10 @@ public class HealthManager : MonoBehaviour
     public void TakeDamage(float amount)
     {
         health -= amount;
+        if (health < 0)
+        {
+            health = 0;
+        }
     }
 
     public void DealDamage(GameObject target)
